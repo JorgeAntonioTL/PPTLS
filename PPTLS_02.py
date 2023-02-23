@@ -1,4 +1,5 @@
 #Declaración de las clases
+#https://pythondiario.com/2015/05/juego-en-pygame-piedra-spock-papel.html#google_vignette
 
 import pygame
 import random
@@ -91,6 +92,7 @@ class Juego():
         self.jugador_escoge = ""
         self.comp_escoge = ""
         self.resultado = ""
+
         self.texto_jugador = texto("Jugador", 20, blanco) 
         self.texto_computadora = texto ("Máquina", 20, blanco)
         self.texto_resultado = texto("Resultado", 20, blanco)
@@ -104,3 +106,64 @@ class Juego():
         self.comp_pos = 480
         
         self.puntuacion = [0, 0] 
+        
+    def copiar_imagen(self, mano_seleccionada):
+
+        for mano in self.manos:
+            if mano.tipo_mano() is mano_seleccionada: 
+                return pygame.transform.scale(mano.obtener_imagen(), (200, 200))
+            
+    def obtener_manos(self):
+        return self.manos
+
+    def seleccionar (self, mano):
+        self.mano_seleccionada = mano
+
+    def obtener_mano_seleccionada(self): 
+        return self.mano_seleccionada
+    
+    def dibujar(self, pantalla):
+        pantalla.blit(self.texto_jugador, (10, 10))
+        pantalla.blit(self.texto_computadora, (700, 10))
+        pantalla.blit(self.texto_resultado, (370, 10))
+
+        if self.jugador_imagen:
+            pantalla.blit(texto(str(self.puntuacion[0]), 80, blanco), (190, 40)) 
+            pantalla.blit(texto(str(self.puntuacion[1]), 80, blanco), (590, 40))
+            pantalla.blit(texto(self.resultado, 50, blanco), (320, 50))
+            pantalla.blit (texto(self.jugador_escoge, 30, rojo), (10, 30)) 
+            pantalla.blit(texto (self.comp_escoge, 30, rojo), (720, 30))
+            pantalla.blit(self.vs_imagen, (350,150))
+            pantalla.blit(self.jugador_imagen, (self.jugador_pos,100))
+            pantalla.blit(self.comp_imagen, (self.comp_pos,100))
+        self.todos_los_sprites.draw(pantalla)
+
+
+def nombre_a_numero(self, nombre): 
+    if nombre is "Piedra": return 0
+    elif nombre is "Papel": return 1 
+    elif nombre is "Tijera": return 2
+    elif nombre is "Lagarto": return 3
+    elif nombre is "Spock": return 4
+    else: print ("Introduce un nombre valido")
+
+def numero_a_nombre(self, numero):
+    if  numero == 0: return "Piedra"
+    elif numero == 1: return "Spock"
+    elif numero == 2: return "Papel"
+    elif numero == 3: return "Lagarto" 
+    elif numero == 4: return "Tijeras"
+    else: print "Numero fuera de rango"
+
+def jugar(self, jugador):        
+    self.jugador_escoge jugador = self.jugador_imagen = self.copiar_imagen (jugador)
+
+numero_jugador self.nombre_a_numero(jugador)
+numero_comp = random.randrange(5)
+self.comp_escoge = self.numero_a_nombre (numero_comp) self.comp_imagen self.copiar_imagen(self.comp_escoge) =
+res = (numero_jugador numero_comp) % 5
+if res == 0: self.resultado = 'EMPATE!'
+elif res < 3:
+self.resultado = 'GANASTE' self.puntuacion[0] += 1
+elif res > 2: self.resultado = 'PIERDES'
+self.puntuacion[1] 1

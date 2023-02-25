@@ -14,12 +14,10 @@
 #3) Lagarto: Piedra, Tijeras
 #4) Spock: Papel, Lagarto
 
+#Recordatorio: Agregar Shuffle()
+Manos_Jugar = [0, 1, 2, 3, 4]
 
-counter = [["Papel", "Spock"],
-            ["Tijeras", "Lagarto"],
-            ["Piedra", "Spock"],
-            ["Piedra", "Tijeras"],
-            ["Papel", "Lagarto"]]
+counter = [[1, 4],[2, 3],[0, 4],[0, 2],[1, 3]]
 
 import pygame
 import random

@@ -72,8 +72,8 @@ class Juego():
         self.comp_escoge = ""
         self.resultado = ""
 
-        self.texto_jugador = texto("Jugador", 20, blanco) 
-        self.texto_computadora = texto ("Máquina", 20, blanco)
+        self.texto_jugador = texto("Persona", 20, blanco) 
+        self.texto_computadora = texto ("Computadora", 20, blanco)
         self.texto_resultado = texto("Resultado", 20, blanco)
         
         self.vs_imagen = pygame.image.load("vs.png")
@@ -182,8 +182,8 @@ def main():
     pygame.init()
 
     #Dimensiones de la pantalla
-    ancho = 1000
-    alto = 800
+    ancho = 900
+    alto = 600
     pantalla = pygame.display.set_mode((ancho, alto))
     pygame.display.set_caption("PPTLS")
 

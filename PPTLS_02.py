@@ -1,5 +1,4 @@
 #Declaración de las clases
-#https://pythondiario.com/2015/05/juego-en-pygame-piedra-spock-papel.html#google_vignette
 
 import pygame
 import random
@@ -10,14 +9,14 @@ counter = [[1, 4],[2, 3],[0, 4],[0, 2],[1, 3]]
 
 blanco = (255, 255, 255) 
 negro = (0, 0, 0) 
-rojo = (255, 0, 0) 
+rojo = (0, 255, 255) 
 fps = 30
 
 def Shuffle_Manos_Jugar():
     return random.shuffle(Manos_Jugar)
 
 
-def texto(texto, tam = 20, color = (0, 0, 0)):
+def texto(texto, tam = 20, color = (0, 255, 255)):
     fuente = pygame.font.Font(None, tam)
     return fuente.render(texto, True, color)
 
@@ -59,12 +58,12 @@ class Juego():
     
         self.manos = []
 
-        posicion_vertical = 320 
-        self.manos.append(manos ("Piedra", 10, posicion_vertical))
-        self.manos.append(manos ("Spock", 167, posicion_vertical))
-        self.manos.append(manos ("Papel", 324, posicion_vertical))
-        self.manos.append(manos ("Lagarto", 481, posicion_vertical)) 
-        self.manos.append(manos ("Tijeras", 638, posicion_vertical))
+        posicion_vertical = 400 
+        self.manos.append(manos ("Piedra", 60, posicion_vertical))
+        self.manos.append(manos ("Spock", 217, posicion_vertical))
+        self.manos.append(manos ("Papel", 374, posicion_vertical))
+        self.manos.append(manos ("Lagarto", 531, posicion_vertical)) 
+        self.manos.append(manos ("Tijeras", 688, posicion_vertical))
 
         self.todos_los_sprites = pygame.sprite.Group(self.manos)
         
@@ -82,7 +81,7 @@ class Juego():
         self.comp_imagen = None
         
         self.jugador_pos = 120
-        self.comp_pos = 480
+        self.comp_pos = 600
         
         self.puntuacion = [0, 0] 
         

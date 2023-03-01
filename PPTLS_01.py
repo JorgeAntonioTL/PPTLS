@@ -26,7 +26,7 @@ import sys
 
 blanco = (255, 255, 255) 
 negro = (0, 0, 0) 
-rojo = (255, 0, 0) 
+rojo = (0, 255, 255) 
 fps = 30
 
 class pantalla():
